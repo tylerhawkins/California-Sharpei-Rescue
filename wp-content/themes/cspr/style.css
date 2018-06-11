@@ -33,18 +33,11 @@ body {
 	font:300 11px/1.4 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	color:#444;
 }
-/* clear */
-.clear:before,
-.clear:after {
-    content:' ';
-    display:table;
-}
-
-.clear:after {
-    clear:both;
-}
-.clear {
-    *zoom:1;
+/* clearfix */
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
 }
 img {
 	max-width:100%;
@@ -72,18 +65,16 @@ input:focus {
 /*------------------------------------*\
     STRUCTURE
 \*------------------------------------*/
-
-/* wrapper */
-.wrapper {
-	max-width:1280px;
-	width:95%;
-	margin:0 auto;
-	position:relative;
-}
 /* header */
-.header {
+.header { background: #fff; text-align: right; padding: 10px 0; }
+.header .header-inner { max-width: 1440px; margin: 0 auto; }
+.header .logo { float: left; width: 132px; height: auto; }
+.header .nav { display: inline-block; vertical-align: middle; padding: 50px 0; }
+.header .nav ul { list-style: none; padding: 0; margin: 0; }
+.header .nav ul li { display: inline-block; vertical-align: top; margin: 0; font-size: 16px; line-height: 32px; font-weight: bold; text-transform: uppercase; margin-right: 20px; }
+.header .nav ul li:last-child { margin-right: 0; }
+.header .nav ul li a { color: #2C2C2C; }
 
-}
 /* logo */
 .logo {
 
