@@ -30,7 +30,6 @@ There are a few ways to get involved, submit a Pull Request, or submit a comment
 ### jQuery + JavaScript
 * Replaced built-in WordPress enqueue with Google CDN
 * Protocol relative jQuery if Google CDN offline (HTML5 Boilerplate)
-* Conditionizr for cross-platform/device detects and enhancements
 * Modernizr feature detection, HTML5 element support for legacy, progressive enhancement (HTML5 Boilerplate)
 * DOM Ready JavaScript file setup (scripts.js) for instant JavaScript development
 * JavaScript files enqueued using WordPress functions into wp_head
