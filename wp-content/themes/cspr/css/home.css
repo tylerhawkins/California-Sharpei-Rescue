@@ -1,0 +1,2 @@
+.home .home-banner { position: relative; background: url(../images/home-banner-lucy.jpg) center center no-repeat; background-size: cover; }
+.home .home-banner:before { display: block; content: ""; width: 100%; padding-top: calc((600 / 1400) * 100%); }

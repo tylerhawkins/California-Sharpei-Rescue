@@ -67,13 +67,17 @@ input:focus {
 \*------------------------------------*/
 /* header */
 .header { background: #fff; text-align: right; padding: 10px 0; }
-.header .header-inner { max-width: 1440px; margin: 0 auto; }
-.header .logo { float: left; width: 132px; height: auto; }
-.header .nav { display: inline-block; vertical-align: middle; padding: 50px 0; }
+.header .header-inner { position: relative; max-width: 1480px; margin: 0 auto; padding: 46px 20px 46px 172px; }
+.header .logo { position: absolute; top: 0; left: 20px; width: 132px; height: auto; }
+.header .nav { display: inline-block; vertical-align: middle; }
 .header .nav ul { list-style: none; padding: 0; margin: 0; }
 .header .nav ul li { display: inline-block; vertical-align: top; margin: 0 20px 0 0; font-size: 16px; line-height: 32px; font-weight: bold; text-transform: uppercase; }
 .header .nav ul li:last-child { margin-right: 0; }
 .header .nav ul li a { color: #2C2C2C; }
+.header .header-search { display: inline-block; vertical-align: middle; padding: 0 0 0 20px; width: 25%; }
+.header .header-search .input-wrap { position: relative; }
+.header .header-search .input-wrap input.search-input { height: 40px; border: 1px solid #272727; background-color: #F7F7F7; font-size: 13px; line-height: 38px; color: #696969; border-radius: 21px; padding: 0 10px; width: 100%; }
+.header .header-search .input-wrap .search-submit { position: absolute; top: 0px; right: 0; height: 40px; width: 40px; outline: 0; border: none; }
 
 /* logo */
 .logo {

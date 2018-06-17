@@ -35,12 +35,12 @@ if (function_exists('add_theme_support'))
     // Add Support for Custom Backgrounds - Uncomment below if you're going to use
     /*add_theme_support('custom-background', array(
 	'default-color' => 'FFF',
-	'default-image' => get_template_directory_uri() . '/img/bg.jpg'
+	'default-image' => get_template_directory_uri() . '/images/bg.jpg'
     ));*/
 
     // Add Support for Custom Header - Uncomment below if you're going to use
     /*add_theme_support('custom-header', array(
-	'default-image'			=> get_template_directory_uri() . '/img/headers/default.jpg',
+	'default-image'			=> get_template_directory_uri() . '/images/headers/default.jpg',
 	'header-text'			=> false,
 	'default-text-color'		=> '000',
 	'width'				=> 1000,
@@ -136,11 +136,14 @@ function html5blank_conditional_scripts()
 // Load HTML5 Blank styles
 function html5blank_styles()
 {
-    wp_register_style('normalize', get_template_directory_uri() . '/normalize.css', array(), '1.0', 'all');
+    wp_register_style('normalize', get_template_directory_uri() . '/css/normalize.css', array(), '1.0', 'all');
     wp_enqueue_style('normalize'); // Enqueue it!
 
-    wp_register_style('html5blank', get_template_directory_uri() . '/style.css', array(), '1.0', 'all');
+    wp_register_style('html5blank', get_template_directory_uri() . '/css/style.css', array(), '1.0', 'all');
     wp_enqueue_style('html5blank'); // Enqueue it!
+
+    wp_register_style('home', get_template_directory_uri() . '/css/home.css', array(), '1.0', 'all');
+    wp_enqueue_style('home'); // Enqueue it!
 }
 
 // Register HTML5 Blank Navigation
@@ -298,7 +301,7 @@ function remove_thumbnail_dimensions( $html )
 // Custom Gravatar in Settings > Discussion
 function html5blankgravatar ($avatar_defaults)
 {
-    $myavatar = get_template_directory_uri() . '/img/gravatar.jpg';
+    $myavatar = get_template_directory_uri() . '/images/gravatar.jpg';
     $avatar_defaults[$myavatar] = "Custom Gravatar";
     return $avatar_defaults;
 }
