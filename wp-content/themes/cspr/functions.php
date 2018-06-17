@@ -30,7 +30,7 @@ if (function_exists('add_theme_support'))
     add_image_size('large', 700, '', true); // Large Thumbnail
     add_image_size('medium', 250, '', true); // Medium Thumbnail
     add_image_size('small', 120, '', true); // Small Thumbnail
-    add_image_size('custom-size', 700, 200, true); // Custom Thumbnail Size call using the_post_thumbnail('custom-size');
+    add_image_size('custom-size', 720, 540, true); // Custom Thumbnail Size call using the_post_thumbnail('custom-size');
 
     // Add Support for Custom Backgrounds - Uncomment below if you're going to use
     /*add_theme_support('custom-background', array(
@@ -139,11 +139,8 @@ function html5blank_styles()
     wp_register_style('normalize', get_template_directory_uri() . '/css/normalize.css', array(), '1.0', 'all');
     wp_enqueue_style('normalize'); // Enqueue it!
 
-    wp_register_style('html5blank', get_template_directory_uri() . '/css/style.css', array(), '1.0', 'all');
+    wp_register_style('html5blank', get_template_directory_uri() . '/css/styles.css', array(), '1.0', 'all');
     wp_enqueue_style('html5blank'); // Enqueue it!
-
-    wp_register_style('home', get_template_directory_uri() . '/css/home.css', array(), '1.0', 'all');
-    wp_enqueue_style('home'); // Enqueue it!
 }
 
 // Register HTML5 Blank Navigation
@@ -370,9 +367,10 @@ add_action('wp_print_scripts', 'html5blank_conditional_scripts'); // Add Conditi
 add_action('get_header', 'enable_threaded_comments'); // Enable Threaded Comments
 add_action('wp_enqueue_scripts', 'html5blank_styles'); // Add Theme Stylesheet
 add_action('init', 'register_html5_menu'); // Add HTML5 Blank Menu
-add_action('init', 'create_post_type_html5'); // Add our HTML5 Blank Custom Post Type
 add_action('widgets_init', 'my_remove_recent_comments_style'); // Remove inline Recent Comment Styles from wp_head()
 add_action('init', 'html5wp_pagination'); // Add our HTML5 Pagination
+
+add_action('init', 'create_post_type_available_dogs'); // Add Available Dogs post type
 
 // Remove Actions
 remove_action('wp_head', 'feed_links_extra', 3); // Display the links to the extra feeds such as category feeds
@@ -419,27 +417,25 @@ add_shortcode('html5_shortcode_demo_2', 'html5_shortcode_demo_2'); // Place [htm
 /*------------------------------------*\
 	Custom Post Types
 \*------------------------------------*/
-
-// Create 1 Custom Post type for a Demo, called HTML5-Blank
-function create_post_type_html5()
+function create_post_type_available_dogs()
 {
-    register_taxonomy_for_object_type('category', 'html5-blank'); // Register Taxonomies for Category
-    register_taxonomy_for_object_type('post_tag', 'html5-blank');
-    register_post_type('html5-blank', // Register Custom Post Type
+    register_taxonomy_for_object_type('category', 'available-dog'); // Register Taxonomies for Category
+    register_taxonomy_for_object_type('post_tag', 'available-dog');
+    register_post_type('available-dog', // Register Custom Post Type
         array(
         'labels' => array(
-            'name' => __('HTML5 Blank Custom Post', 'html5blank'), // Rename these to suit
-            'singular_name' => __('HTML5 Blank Custom Post', 'html5blank'),
+            'name' => __('Available Dogs', 'html5blank'), // Rename these to suit
+            'singular_name' => __('Available Dog', 'html5blank'),
             'add_new' => __('Add New', 'html5blank'),
-            'add_new_item' => __('Add New HTML5 Blank Custom Post', 'html5blank'),
+            'add_new_item' => __('Add New Available Dog', 'html5blank'),
             'edit' => __('Edit', 'html5blank'),
-            'edit_item' => __('Edit HTML5 Blank Custom Post', 'html5blank'),
-            'new_item' => __('New HTML5 Blank Custom Post', 'html5blank'),
-            'view' => __('View HTML5 Blank Custom Post', 'html5blank'),
-            'view_item' => __('View HTML5 Blank Custom Post', 'html5blank'),
-            'search_items' => __('Search HTML5 Blank Custom Post', 'html5blank'),
-            'not_found' => __('No HTML5 Blank Custom Posts found', 'html5blank'),
-            'not_found_in_trash' => __('No HTML5 Blank Custom Posts found in Trash', 'html5blank')
+            'edit_item' => __('Edit Available Dog', 'html5blank'),
+            'new_item' => __('New Available Dog', 'html5blank'),
+            'view' => __('View Available Dog', 'html5blank'),
+            'view_item' => __('View Available Dog', 'html5blank'),
+            'search_items' => __('Search Available Dog', 'html5blank'),
+            'not_found' => __('No Available Dogs found', 'html5blank'),
+            'not_found_in_trash' => __('No Available Dogs found in Trash', 'html5blank')
         ),
         'public' => true,
         'hierarchical' => true, // Allows your posts to behave like Hierarchy Pages

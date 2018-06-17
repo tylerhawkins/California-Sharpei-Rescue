@@ -1,0 +1,108 @@
+.home {
+	.home-banner {
+		position: relative;
+		background: url(../images/home-banner-lucy.jpg) center center no-repeat;
+		background-size: cover;
+
+		&:before {
+			display: block;
+			content: "";
+			width: 100%;
+			padding-top: (600 / 1400) * 100%;
+		}
+
+		.text-box {
+			position: absolute;
+			top: 10%;
+			right: 10%;
+			max-width: 500px;
+
+			h2 {
+				font-size: 50px;
+				line-height: 58px;
+				color: @color-white;
+				font-weight: bold;
+				margin: 0 0 10px;
+				text-transform: none;
+			}
+
+			p {
+				margin: 0 0 20px;
+				font-family: 'Roboto Condensed', sans-serif;
+				font-size: 28px;
+				line-height: 33px;
+				font-weight: bold;
+				color: @color-dark-grey-2;
+			}
+
+			.btn {
+				padding-left: 60px;
+				padding-right: 60px;
+			}
+		}
+	}
+
+	.welcome-text {
+		text-align: center;
+		color: @color-white;
+		background-color: @color-dark-grey;
+		padding: 60px 20px;
+
+		.welcome-text-inner {
+			max-width: 880px;
+			margin: 0 auto;
+		}
+
+		h2 {
+			color: @color-white;
+		}
+
+		p {
+			font-size: 20px;
+			line-height: 32px;
+
+			&:first-of-type {
+				margin-bottom: 20px;
+			}
+		}
+	}
+
+	.available-dogs-container {
+		text-align: center;
+		padding: 40px 20px;
+
+		h2 {
+			color: @color-red;
+		}
+
+		p.subtitle {
+			color: @color-black;
+			font-size: 14px;
+			margin-bottom: 30px;
+
+			a {
+				color: @color-black;
+				text-decoration: underline;
+			}
+		}
+
+		.available-dogs {
+			list-style: none;
+			max-width: 1200px;
+			margin: 0 auto;
+			padding: 0;
+
+			li {
+				float: left;
+				width: 32%;
+				text-align: center;
+				margin-right: 2%;
+				margin-bottom: 2%;
+
+				&:nth-child(3n) {
+					margin-right: 0;
+				}
+			}
+		}
+	}
+}
