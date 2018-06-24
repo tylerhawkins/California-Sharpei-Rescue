@@ -9,7 +9,7 @@
 }
 
 body {
-	font: 16px/1.1 'Roboto', Helvetica, Arial, sans-serif;
+	font: 16px/1.1 'Montserrat', Helvetica, Arial, sans-serif;
 	color: @color-text;
 }
 
@@ -121,6 +121,23 @@ button.btn {
 	background: @color-light-grey;
 	color: @color-white;
 	text-shadow:none;
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+	font-style: italic;
+	color: @color-dark-grey-2;
+}
+::-moz-placeholder { /* Firefox 19+ */
+	font-style: italic;
+	color: @color-dark-grey-2;
+}
+:-ms-input-placeholder { /* IE 10+ */
+	font-style: italic;
+	color: @color-dark-grey-2;
+}
+:-moz-placeholder { /* Firefox 18- */
+	font-style: italic;
+	color: @color-dark-grey-2;
 }
 
 /*------------------------------------*\
