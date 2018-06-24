@@ -1,4 +1,80 @@
 //******************************************************************************
+// Global
+//******************************************************************************
+.page-title-wrap {
+	.aspect-ratio(1440, 135);
+	background-color: @color-dark-grey;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	margin-bottom: 80px;
+
+	.page-title {
+		font-size: 32px;
+		line-height: 38px;
+		font-family: @font-family-montserrat;
+		font-weight: bold;
+		color: @color-white;
+		letter-spacing: -1px;
+		text-align: center;
+		margin: 0;
+		.absolute-center();
+	}
+}
+
+.page-container {
+	max-width: 1000px;
+	padding: 0 20px;
+	margin: 0 auto;
+
+	.page-content {
+		.section-container {
+			margin-bottom: 40px;
+		}
+	}
+
+	&.has-sidebar {
+		.page-content {
+			float: right;
+			width: 65%;
+		}
+
+		.sidebar {
+			float: left;
+			width: 30%;
+
+			#rpwwt-recent-posts-widget-with-thumbnails-2 {
+				ul li {
+					margin-bottom: 30px;
+
+					&:last-child {
+						margin-bottom: 0;
+					}
+				}
+
+				img {
+					width: 100%;
+					height: auto;
+					display: block;
+					margin: 0 0 15px 0;
+					float: none;
+				}
+
+				.rpwwt-post-title {
+					display: block;
+					text-align: center;
+					font-size: 28px;
+					line-height: 32px;
+					font-family: @font-family-montserrat;
+					font-weight: bold;
+					color: @color-black;
+				}
+			}
+		}
+	}
+}
+
+//******************************************************************************
 // About Page
 //******************************************************************************
 body.about {

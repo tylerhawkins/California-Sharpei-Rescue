@@ -31,6 +31,7 @@ if (function_exists('add_theme_support'))
     add_image_size('medium', 250, '', true); // Medium Thumbnail
     add_image_size('small', 120, '', true); // Small Thumbnail
     add_image_size('custom-size', 720, 540, true); // Custom Thumbnail Size call using the_post_thumbnail('custom-size');
+    add_image_size('custom-sidebar', 360, 270, true); // Custom Sidebar Thumbnail Size call using the_post_thumbnail('custom-sidebar');
 
     // Add Support for Custom Backgrounds - Uncomment below if you're going to use
     /*add_theme_support('custom-background', array(
@@ -154,6 +155,12 @@ function register_html5_menu()
     ));
 }
 
+// Modify core Recent Posts Widget to include Available Dogs custom post type
+function widget_posts_args_add_custom_type($params) {
+   $params['post_type'] = array('post','available-dog');
+   return $params;
+}
+
 // Remove the <div> surrounding the dynamic navigation to cleanup markup
 function my_wp_nav_menu_args($args = '')
 {
@@ -196,13 +203,13 @@ if (function_exists('register_sidebar'))
 {
     // Define Sidebar Widget Area 1
     register_sidebar(array(
-        'name' => __('Widget Area 1', 'html5blank'),
-        'description' => __('Description for this widget-area...', 'html5blank'),
-        'id' => 'widget-area-1',
-        'before_widget' => '<div id="%1$s" class="%2$s">',
+        'name' => __('CMS Page Sidebar', 'html5blank'),
+        'description' => __('Sidebar for CMS Pages', 'html5blank'),
+        'id' => 'cms-sidebar',
+        'before_widget' => '<div id="%1$s" class="cms-sidebar">',
         'after_widget' => '</div>',
-        'before_title' => '<h3>',
-        'after_title' => '</h3>'
+        'before_title' => '<h5>',
+        'after_title' => '</h5>'
     ));
 }
 
@@ -392,6 +399,7 @@ add_filter('show_admin_bar', 'remove_admin_bar'); // Remove Admin bar
 add_filter('style_loader_tag', 'html5_style_remove'); // Remove 'text/css' from enqueued stylesheet
 add_filter('post_thumbnail_html', 'remove_thumbnail_dimensions', 10); // Remove width and height dynamic attributes to thumbnails
 add_filter('image_send_to_editor', 'remove_thumbnail_dimensions', 10); // Remove width and height dynamic attributes to post images
+add_filter('rpwwt_widget_posts_args', 'widget_posts_args_add_custom_type'); // Modify core Recent Posts Widget to include Available Dogs custom post type
 
 // Remove Filters
 remove_filter('the_excerpt', 'wpautop'); // Remove <p> tags from Excerpt altogether
