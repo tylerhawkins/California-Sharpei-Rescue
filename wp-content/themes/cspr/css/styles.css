@@ -700,5 +700,14 @@ body.about .page-title-wrap {
 .home .available-dogs-container .available-dogs li:nth-child(3n) {
   margin-right: 0;
 }
+.home .available-dogs-container .available-dogs li .img-wrap {
+  margin-bottom: 20px;
+}
+.home .available-dogs-container .available-dogs li .img-wrap img {
+  display: block;
+}
+.home .available-dogs-container .available-dogs li h5 {
+  margin-bottom: 0;
+}
 
 /*# sourceMappingURL=../css/styles.css.map */

@@ -1,11 +1,14 @@
 (function ($, root, undefined) {
-	
 	$(function () {
-		
 		'use strict';
-		
-		// DOM ready, take it away
-		
+
+		var matchHeightOptions = {
+				byRow: true,
+				property: 'min-height',
+				target: null,
+				remove: false
+			};
+
+		$('.available-dogs > li .img-wrap').matchHeight(matchHeightOptions);
 	});
-	
 })(jQuery, this);
