@@ -9,12 +9,14 @@
 }
 
 body {
-	font: 16px/1.1 'Montserrat', Helvetica, Arial, sans-serif;
+	font-size: 16px;
+	line-height: 20px;
+	font-family: @font-family-montserrat;
 	color: @color-text;
 }
 
 h1, h2, h3, h4, h5, h6 {
-	font-family: 'Roboto Condensed', sans-serif;
+	font-family: @font-family-roboto-cd;
     color: @color-black;
     font-weight: bold;
     margin: 0 0 20px;
@@ -23,22 +25,27 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
 	font-size: 54px;
+	line-height: 58px;
 }
 
 h2 {
 	font-size: 50px;
+	line-height: 54px;
 }
 
 h3 {
 	font-size: 44px;
+	line-height: 48px;
 }
 
 h4 {
 	font-size: 30px;
+	line-height: 34px;
 }
 
 h5 {
 	font-size: 28px;
+	line-height: 32px;
 }
 
 p {
@@ -74,6 +81,40 @@ a {
 input:focus {
 	outline:0;
 	border: 1px solid @color-border;
+}
+
+/*------------------------------------*\
+    Page
+\*------------------------------------*/
+.page-title-wrap {
+	.aspect-ratio(1440, 135);
+	background-color: @color-dark-grey;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	margin-bottom: 80px;
+
+	.page-title {
+		font-size: 32px;
+		line-height: 38px;
+		font-family: @font-family-montserrat;
+		font-weight: bold;
+		color: @color-white;
+		letter-spacing: -1px;
+		text-align: center;
+		margin: 0;
+		.absolute-center();
+	}
+}
+
+.page-content {
+	max-width: 1280px;
+	padding: 0 20px;
+	margin: 0 auto;
+
+	.section-container {
+		margin-bottom: 40px;
+	}
 }
 
 /*------------------------------------*\
