@@ -196,7 +196,8 @@ input:focus {
 /*------------------------------------*\
     Buttons
 \*------------------------------------*/
-.btn {
+.btn,
+input[type="submit"] {
   display: inline-block;
   background-color: #C61C30;
   color: #FFFFFF;
@@ -214,19 +215,102 @@ input:focus {
   transition: background-color 0.3s;
   text-align: center;
 }
-.btn:hover {
+.btn:hover,
+input[type="submit"]:hover {
   background-color: #9B1D2C;
   color: #FFFFFF;
 }
-.btn.secondary {
+.btn.secondary,
+input[type="submit"].secondary {
   background-color: #000000;
 }
-.btn.secondary:hover {
+.btn.secondary:hover,
+input[type="submit"].secondary:hover {
   background-color: #696969;
 }
-button.btn {
+button.btn,
+input[type="submit"] {
   outline: 0;
   border: none;
+}
+/*------------------------------------*\
+    FORMS
+\*------------------------------------*/
+.wpcf7-form .form-field {
+  margin-bottom: 20px;
+}
+.wpcf7-form .form-field label {
+  display: inline-block;
+  vertical-align: top;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: bold;
+  color: #666666;
+  margin-bottom: 5px;
+}
+.wpcf7-form .form-field label.req:after {
+  content: '*';
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 5px;
+  color: #C61C30;
+}
+.wpcf7-form .form-field .wpcf7-form-control-wrap {
+  display: block;
+  /* Checkboxes */
+}
+.wpcf7-form .form-field .wpcf7-form-control-wrap input[type="text"],
+.wpcf7-form .form-field .wpcf7-form-control-wrap input[type="email"],
+.wpcf7-form .form-field .wpcf7-form-control-wrap input[type="tel"] {
+  font-size: 14px;
+  line-height: 38px;
+  height: 40px;
+  width: 100%;
+  padding: 0 10px;
+  border: 1px solid #CCCCCC;
+  border-radius: 5px;
+  background-clip: padding-box;
+  background-color: #F7F7F7;
+}
+.wpcf7-form .form-field .wpcf7-form-control-wrap textarea {
+  background-color: #F7F7F7;
+  border: 1px solid #CCCCCC;
+  border-radius: 5px;
+  background-clip: padding-box;
+  padding: 10px;
+  width: 100%;
+  font-size: 14px;
+  line-height: 16px;
+  resize: none;
+}
+.wpcf7-form .form-field .wpcf7-form-control-wrap .wpcf7-not-valid-tip {
+  font-size: 12px;
+  line-height: 22px;
+  color: #C61C30;
+}
+.wpcf7-form .form-field .wpcf7-form-control-wrap .wpcf7-list-item {
+  display: block;
+  margin: 0 0 5px;
+}
+.wpcf7-form .form-field .wpcf7-form-control-wrap .wpcf7-list-item:last-of-type {
+  margin-bottom: 0;
+}
+.wpcf7-form .form-field .wpcf7-form-control-wrap .wpcf7-list-item input[type="checkbox"] {
+  float: left;
+  margin-top: 1px;
+  margin-right: 5px;
+}
+.wpcf7-form .form-field .wpcf7-form-control-wrap .wpcf7-list-item .wpcf7-list-item-label {
+  display: block;
+}
+.wpcf7-response-output {
+  float: left;
+  width: 100%;
+  margin: 20px 0 !important;
+}
+.wpcf7-response-output.wpcf7-validation-errors,
+.wpcf7-response-output.wpcf7-acceptance-missing {
+  border-color: #C61C30 !important;
 }
 /*------------------------------------*\
     MISC
@@ -341,7 +425,7 @@ a img.aligncenter {
   background: #FFFFFF;
   text-align: right;
   padding: 10px 0;
-  border-bottom: 1px solid rgba(151, 151, 151, 0.4);
+  border-bottom: 1px solid #CCCCCC;
 }
 .header .header-inner {
   position: relative;
@@ -685,6 +769,11 @@ a img.aligncenter {
 .page-container .page-content .section-container {
   margin-bottom: 40px;
 }
+.page-container .page-content .section-container ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
 .page-container.has-sidebar .page-content {
   float: right;
   width: 65%;
@@ -717,6 +806,42 @@ a img.aligncenter {
 }
 body.about .page-title-wrap {
   background-image: url(../images/about-banner.png);
+}
+body.contact .page-title-wrap {
+  background-image: url(../images/contact-banner.png);
+}
+body.contact .contact-form-container {
+  max-width: 1200px;
+  padding: 0 20px;
+  margin: 0 auto 40px;
+}
+body.contact .contact-form-container .form-wrap {
+  margin-bottom: 40px;
+}
+@media only screen and (min-width: 768px) {
+  body.contact .contact-form-container .form-wrap .form-col {
+    width: 46%;
+  }
+  body.contact .contact-form-container .form-wrap .form-col.left {
+    float: left;
+  }
+  body.contact .contact-form-container .form-wrap .form-col.right {
+    float: right;
+  }
+}
+body.contact .contact-form-container h5 {
+  font-family: 'Montserrat', Helvetica, Arial, sans-serif;
+  margin-bottom: 15px;
+}
+body.contact .contact-form-container .subtitle {
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+body.contact .contact-form-container p a {
+  color: #C61C30;
+}
+body.contact .contact-form-container p a:hover {
+  text-decoration: underline;
 }
 body.available-dogs .page-title-wrap {
   background-image: url(../images/available-dogs-banner.png);

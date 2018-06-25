@@ -80,13 +80,14 @@ a {
 
 input:focus {
 	outline:0;
-	border: 1px solid @color-border;
+	border: 1px solid @color-border-dark;
 }
 
 /*------------------------------------*\
     Buttons
 \*------------------------------------*/
-.btn {
+.btn,
+input[type="submit"] {
 	display: inline-block;
 	background-color: @color-red;
 	color: @color-white;
@@ -115,9 +116,101 @@ input:focus {
 	}
 }
 
-button.btn {
+button.btn,
+input[type="submit"] {
 	outline: 0;
 	border: none;
+}
+
+/*------------------------------------*\
+    FORMS
+\*------------------------------------*/
+.wpcf7-form {
+	.form-field {
+		margin-bottom: 20px;
+
+		label {
+			display: inline-block;
+			vertical-align: top;
+			font-size: 16px;
+			line-height: 20px;
+			font-weight: bold;
+			color: @color-text;
+			margin-bottom: 5px;
+
+			&.req:after {
+				content: '*';
+				display: inline-block;
+				vertical-align: top;
+				margin-left: 5px;
+				color: @color-red;
+			}
+		}
+
+		.wpcf7-form-control-wrap {
+			display: block;
+
+			input[type="text"],
+			input[type="email"],
+			input[type="tel"] {
+				font-size: 14px;
+				line-height: 38px;
+				height: 40px;
+				width: 100%;
+				padding: 0 10px;
+				border: 1px solid @color-border-light;
+				.border-radius(5px);
+				background-color: @color-light-grey;
+			}
+
+			textarea {
+				background-color: @color-light-grey;
+				border: 1px solid @color-border-light;
+				.border-radius(5px);
+				padding: 10px;
+				width: 100%;
+				font-size: 14px;
+				line-height: 16px;
+				resize: none;
+			}
+
+			.wpcf7-not-valid-tip {
+				font-size: 12px;
+				line-height: 22px;
+				color: @color-red;
+			}
+
+			/* Checkboxes */
+			.wpcf7-list-item {
+				display: block;
+				margin: 0 0 5px;
+
+				&:last-of-type {
+					margin-bottom: 0;
+				}
+
+				input[type="checkbox"] {
+					float: left;
+					margin-top: 1px;
+					margin-right: 5px;
+				}
+
+				.wpcf7-list-item-label {
+					display: block;
+				}
+			}
+		}
+	}
+}
+
+.wpcf7-response-output {
+	float: left;
+	width: 100%;
+	margin: 20px 0 !important;
+
+	&.wpcf7-validation-errors, &.wpcf7-acceptance-missing {
+		border-color: @color-red !important;
+	}
 }
 
 /*------------------------------------*\

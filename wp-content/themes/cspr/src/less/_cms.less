@@ -30,6 +30,12 @@
 	.page-content {
 		.section-container {
 			margin-bottom: 40px;
+
+			ul {
+				list-style: none;
+				margin: 0;
+				padding: 0;
+			}
 		}
 	}
 
@@ -80,6 +86,57 @@
 body.about {
 	.page-title-wrap {
 		background-image: url(../images/about-banner.png);
+	}
+}
+
+//******************************************************************************
+// About Page
+//******************************************************************************
+body.contact {
+	.page-title-wrap {
+		background-image: url(../images/contact-banner.png);
+	}
+
+	.contact-form-container {
+		max-width: 1200px;
+		padding: 0 20px;
+		margin: 0 auto 40px;
+
+		.form-wrap {
+			margin-bottom: 40px;
+
+			.form-col {
+				@media only screen and (min-width: (@screen-tablet + 1)) {
+					width: 46%;
+
+					&.left {
+						float: left;
+					}
+
+					&.right {
+						float: right;
+					}
+				}
+			}
+		}
+
+		h5 {
+			font-family: @font-family-montserrat;
+			margin-bottom: 15px;
+		}
+
+		.subtitle {
+			font-weight: bold;
+			margin-bottom: 30px;
+		}
+
+		p a {
+			color: @color-red;
+
+			&:hover {
+				text-decoration: underline;
+			}
+		}
 	}
 }
 
