@@ -762,17 +762,12 @@ a img.aligncenter {
   transform: translate(-50%, -50%);
 }
 .page-container {
-  max-width: 1000px;
+  max-width: 1240px;
   padding: 0 20px;
   margin: 0 auto;
 }
 .page-container .page-content .section-container {
   margin-bottom: 40px;
-}
-.page-container .page-content .section-container ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
 }
 .page-container.has-sidebar .page-content {
   float: right;
@@ -804,6 +799,11 @@ a img.aligncenter {
   font-weight: bold;
   color: #000000;
 }
+body.faqs .page-content .section-container ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
 body.about .page-title-wrap {
   background-image: url(../images/about-banner.png);
 }
@@ -811,7 +811,7 @@ body.contact .page-title-wrap {
   background-image: url(../images/contact-banner.png);
 }
 body.contact .contact-form-container {
-  max-width: 1200px;
+  max-width: 1240px;
   padding: 0 20px;
   margin: 0 auto 40px;
 }
