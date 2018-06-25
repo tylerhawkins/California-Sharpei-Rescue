@@ -92,16 +92,26 @@ input:focus {
 	color: @color-white;
 	font-size: 14px;
 	line-height: 18px;
+	font-family: @font-family-montserrat;
 	font-weight: bold;
 	padding: 11px 20px;
 	text-transform: uppercase;
 	.border-radius(5px);
-	.box-shadow(1px 1px 0 0 rgba(0,0,0,0.1));
+	box-shadow: 0 3px 0 0 rgba(0,0,0,0.1), 1px 1px 0 0 rgba(0,0,0,0.1);
 	.transition(background-color 0.3s);
+	text-align: center;
 
 	&:hover {
 		background-color: @color-dark-red;
 		color: @color-white;
+	}
+
+	&.secondary {
+		background-color: @color-black;
+
+		&:hover {
+			background-color: @color-dark-grey-2;
+		}
 	}
 }
 

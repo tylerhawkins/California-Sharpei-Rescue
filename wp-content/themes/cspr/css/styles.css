@@ -202,19 +202,27 @@ input:focus {
   color: #FFFFFF;
   font-size: 14px;
   line-height: 18px;
+  font-family: 'Montserrat', Helvetica, Arial, sans-serif;
   font-weight: bold;
   padding: 11px 20px;
   text-transform: uppercase;
   border-radius: 5px;
   background-clip: padding-box;
-  -webkit-box-shadow: 1px 1px 0 0 rgba(0, 0, 0, 0.1);
-  box-shadow: 1px 1px 0 0 rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0 3px 0 0 rgba(0, 0, 0, 0.1), 1px 1px 0 0 rgba(0, 0, 0, 0.1);
+          box-shadow: 0 3px 0 0 rgba(0, 0, 0, 0.1), 1px 1px 0 0 rgba(0, 0, 0, 0.1);
   -webkit-transition: background-color 0.3s;
   transition: background-color 0.3s;
+  text-align: center;
 }
 .btn:hover {
   background-color: #9B1D2C;
   color: #FFFFFF;
+}
+.btn.secondary {
+  background-color: #000000;
+}
+.btn.secondary:hover {
+  background-color: #696969;
 }
 button.btn {
   outline: 0;
@@ -333,6 +341,7 @@ a img.aligncenter {
   background: #FFFFFF;
   text-align: right;
   padding: 10px 0;
+  border-bottom: 1px solid rgba(151, 151, 151, 0.4);
 }
 .header .header-inner {
   position: relative;
@@ -542,76 +551,6 @@ a img.aligncenter {
   opacity: 0.66;
   margin: 0;
 }
-.page-title-wrap {
-  position: relative;
-  background-color: #2C2C2C;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  margin-bottom: 80px;
-}
-.page-title-wrap:before {
-  display: block;
-  content: "";
-  width: 100%;
-  padding-top: 9.375%;
-}
-.page-title-wrap .page-title {
-  font-size: 32px;
-  line-height: 38px;
-  font-family: 'Montserrat', Helvetica, Arial, sans-serif;
-  font-weight: bold;
-  color: #FFFFFF;
-  letter-spacing: -1px;
-  text-align: center;
-  margin: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-}
-.page-container {
-  max-width: 1000px;
-  padding: 0 20px;
-  margin: 0 auto;
-}
-.page-container .page-content .section-container {
-  margin-bottom: 40px;
-}
-.page-container.has-sidebar .page-content {
-  float: right;
-  width: 65%;
-}
-.page-container.has-sidebar .sidebar {
-  float: left;
-  width: 30%;
-}
-.page-container.has-sidebar .sidebar #rpwwt-recent-posts-widget-with-thumbnails-2 ul li {
-  margin-bottom: 30px;
-}
-.page-container.has-sidebar .sidebar #rpwwt-recent-posts-widget-with-thumbnails-2 ul li:last-child {
-  margin-bottom: 0;
-}
-.page-container.has-sidebar .sidebar #rpwwt-recent-posts-widget-with-thumbnails-2 img {
-  width: 100%;
-  height: auto;
-  display: block;
-  margin: 0 0 15px 0;
-  float: none;
-}
-.page-container.has-sidebar .sidebar #rpwwt-recent-posts-widget-with-thumbnails-2 .rpwwt-post-title {
-  display: block;
-  text-align: center;
-  font-size: 28px;
-  line-height: 32px;
-  font-family: 'Montserrat', Helvetica, Arial, sans-serif;
-  font-weight: bold;
-  color: #000000;
-}
-body.about .page-title-wrap {
-  background-image: url(../images/about-banner.png);
-}
 .home .home-banner {
   position: relative;
   background: url(../images/home-banner-lucy.jpg) center center no-repeat;
@@ -708,6 +647,142 @@ body.about .page-title-wrap {
 }
 .home .available-dogs-container .available-dogs li h5 {
   margin-bottom: 0;
+}
+.page-title-wrap {
+  position: relative;
+  background-color: #2C2C2C;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-bottom: 80px;
+}
+.page-title-wrap:before {
+  display: block;
+  content: "";
+  width: 100%;
+  padding-top: 9.375%;
+}
+.page-title-wrap .page-title {
+  font-size: 32px;
+  line-height: 38px;
+  font-family: 'Montserrat', Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  color: #FFFFFF;
+  letter-spacing: -1px;
+  text-align: center;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.page-container {
+  max-width: 1000px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+.page-container .page-content .section-container {
+  margin-bottom: 40px;
+}
+.page-container.has-sidebar .page-content {
+  float: right;
+  width: 65%;
+}
+.page-container.has-sidebar .sidebar {
+  float: left;
+  width: 30%;
+}
+.page-container.has-sidebar .sidebar #rpwwt-recent-posts-widget-with-thumbnails-2 ul li {
+  margin-bottom: 30px;
+}
+.page-container.has-sidebar .sidebar #rpwwt-recent-posts-widget-with-thumbnails-2 ul li:last-child {
+  margin-bottom: 0;
+}
+.page-container.has-sidebar .sidebar #rpwwt-recent-posts-widget-with-thumbnails-2 img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 0 15px 0;
+  float: none;
+}
+.page-container.has-sidebar .sidebar #rpwwt-recent-posts-widget-with-thumbnails-2 .rpwwt-post-title {
+  display: block;
+  text-align: center;
+  font-size: 28px;
+  line-height: 32px;
+  font-family: 'Montserrat', Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  color: #000000;
+}
+body.about .page-title-wrap {
+  background-image: url(../images/about-banner.png);
+}
+body.available-dogs .page-title-wrap {
+  background-image: url(../images/available-dogs-banner.png);
+}
+body.available-dogs .available-dogs-container {
+  text-align: center;
+  padding: 40px 20px;
+}
+body.available-dogs .available-dogs-container .available-dogs {
+  list-style: none;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0;
+}
+body.available-dogs .available-dogs-container .available-dogs li {
+  float: left;
+  width: 32%;
+  text-align: center;
+  margin-right: 2%;
+  margin-bottom: 2%;
+}
+body.available-dogs .available-dogs-container .available-dogs li:nth-child(3n) {
+  margin-right: 0;
+}
+body.available-dogs .available-dogs-container .available-dogs li .img-wrap {
+  margin-bottom: 20px;
+}
+body.available-dogs .available-dogs-container .available-dogs li .img-wrap img {
+  display: block;
+}
+body.available-dogs .available-dogs-container .available-dogs li h5 {
+  margin-bottom: 0;
+}
+.single-available-dog .available-dog-container {
+  padding: 40px 20px;
+  max-width: 1240px;
+  margin: 0 auto;
+}
+.single-available-dog .available-dog-container .available-dog-col {
+  float: left;
+  width: 48%;
+}
+.single-available-dog .available-dog-container .available-dog-col.left {
+  float: left;
+}
+.single-available-dog .available-dog-container .available-dog-col.right {
+  float: right;
+}
+.single-available-dog .available-dog-container .feature-image {
+  margin-bottom: 20px;
+}
+.single-available-dog .available-dog-container .actions-toolbar {
+  margin-bottom: 30px;
+  font: 0/0 a;
+}
+.single-available-dog .available-dog-container .actions-toolbar .btn {
+  display: inline-block;
+  vertical-align: top;
+  width: 46%;
+}
+.single-available-dog .available-dog-container .actions-toolbar .btn:first-of-type {
+  margin-right: 8%;
+}
+.single-available-dog .available-dog-container .content-wrap {
+  margin-bottom: 30px;
+  line-height: 30px;
 }
 
 /*# sourceMappingURL=../css/styles.css.map */

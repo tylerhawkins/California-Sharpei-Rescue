@@ -82,3 +82,48 @@ body.about {
 		background-image: url(../images/about-banner.png);
 	}
 }
+
+//******************************************************************************
+// Available Dogs Page
+//******************************************************************************
+body.available-dogs {
+	.page-title-wrap {
+		background-image: url(../images/available-dogs-banner.png);
+	}
+
+	.available-dogs-container {
+		text-align: center;
+		padding: 40px 20px;
+
+		.available-dogs {
+			list-style: none;
+			max-width: 1200px;
+			margin: 0 auto;
+			padding: 0;
+
+			li {
+				float: left;
+				width: 32%;
+				text-align: center;
+				margin-right: 2%;
+				margin-bottom: 2%;
+
+				&:nth-child(3n) {
+					margin-right: 0;
+				}
+
+				.img-wrap {
+					margin-bottom: 20px;
+
+					img {
+						display: block;
+					}
+				}
+
+				h5 {
+					margin-bottom: 0;
+				}
+			}
+		}
+	}
+}

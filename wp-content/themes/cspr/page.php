@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-	<main role="main">
+	<main id="maincontent" class="page-main">
 		<div class="page-title-wrap">
 			<h1 class="page-title"><?php the_title(); ?></h1>
 		</div>

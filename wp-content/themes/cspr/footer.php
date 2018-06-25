@@ -1,7 +1,7 @@
 			<footer class="footer" role="contentinfo">
 				<div class="footer-cta-wrap">
 					<div class="footer-cta-col left">
-						<a href="<?php echo get_permalink( get_page_by_path( 'adopt' ) ) ?>">
+						<a href="<?php echo get_permalink( get_page_by_path( 'available-dogs' ) ) ?>">
 							<span class="img-wrap">
 								<img src="<?php echo get_template_directory_uri(); ?>/images/sharpei.png" />
 							</span>
