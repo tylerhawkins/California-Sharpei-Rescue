@@ -57,7 +57,7 @@ function onError(error) {
 *******************************************************************************/
 // Styles task
 gulp.task('styles', function() {
-    return gulp.src(src + '/less/**/styles.less')
+    return gulp.src(src + '/less/**/style.less')
         .pipe(plumber({ errorHandler: onError }))
 
         // Cache
@@ -72,10 +72,10 @@ gulp.task('styles', function() {
         // Autoprefixer
         .pipe(sourcemaps.init({ loadMaps: true }))
         .pipe(autoprefixer( browserSupport ))
-        .pipe(sourcemaps.write('../css'))
+        .pipe(sourcemaps.write('../'))
 
         // Write css
-        .pipe(gulp.dest(dest + '/css'))
+        .pipe(gulp.dest(dest))
 
         // CSS Injection
         .pipe(filter('**/*.css'))
@@ -98,10 +98,10 @@ gulp.task('default', ['styles']);
 
 // Watch task
 gulp.task('watch', function() {
-    gulp.watch(src + '/less/**/styles.less', ['styles']);
+    gulp.watch(src + '/less/**/style.less', ['styles']);
 });
 
 // BrowserSync and styles Watch task.
 gulp.task('bsync', ['browsersync'], function() {
-    gulp.watch(src + '/less/**/styles.less', ['styles']);
+    gulp.watch(src + '/less/**/style.less', ['styles']);
 });

@@ -1,5 +1,5 @@
 <?php
-	/* Template Available Dogs Template */
+	/* Template Name: Available Dogs Template */
 	get_header();
 ?>
 

@@ -143,7 +143,7 @@ function html5blank_styles()
     wp_register_style('normalize', get_template_directory_uri() . '/css/normalize.css', array(), '1.0', 'all');
     wp_enqueue_style('normalize'); // Enqueue it!
 
-    wp_register_style('html5blank', get_template_directory_uri() . '/css/styles.css', array(), '1.0', 'all');
+    wp_register_style('html5blank', get_template_directory_uri() . '/style.css', array(), '1.0', 'all');
     wp_enqueue_style('html5blank'); // Enqueue it!
 }
 
@@ -356,6 +356,43 @@ function html5blankcomments($comment, $args, $depth)
 	<?php endif; ?>
 <?php }
 
+// Contact Form 7 Dynamic Dropdown for Custom Post Type
+function custom_add_form_tag_customlist() {
+    wpcf7_add_form_tag( array( 'customlist', 'customlist*' ), 'custom_customlist_form_tag_handler', true );
+}
+
+function custom_customlist_form_tag_handler( $tag ) {
+
+    $tag = new WPCF7_FormTag( $tag );
+
+    if ( empty( $tag->name ) ) {
+        return '';
+    }
+
+    $customlist = '<option value="Any Dog">Any Dog</option>';
+
+    $query = new WP_Query(array(
+        'post_type' => 'available-dog',
+        'post_status' => 'publish',
+        'posts_per_page' => -1,
+        'orderby'       => 'title',
+        'order'         => 'ASC',
+    ));
+
+    while ($query->have_posts()) {
+        $query->the_post();
+        $post_title = get_the_title();
+        $customlist .= sprintf( '<option value="%1$s">%2$s</option>', esc_html( $post_title ), esc_html( $post_title ) );
+    }
+
+    wp_reset_query();
+
+    $customlist = sprintf(
+        '<span class="wpcf7-form-control-wrap %4$s"><select name="%1$s" id="%2$s" class="wpcf7-form-control wpcf7-select">%3$s</select></span>', $tag->name, $tag->name . '-options', $customlist, sanitize_html_class( $tag->name ) );
+
+    return $customlist;
+}
+
 /*------------------------------------*\
 	Actions + Filters + ShortCodes
 \*------------------------------------*/
@@ -370,6 +407,7 @@ add_action('widgets_init', 'my_remove_recent_comments_style'); // Remove inline 
 add_action('init', 'html5wp_pagination'); // Add our HTML5 Pagination
 
 add_action('init', 'create_post_type_available_dogs'); // Add Available Dogs post type
+add_action( 'wpcf7_init', 'custom_add_form_tag_customlist' ); // Add Contact Form 7 Custom Post Type Dropdown
 
 // Remove Actions
 remove_action('wp_head', 'feed_links_extra', 3); // Display the links to the extra feeds such as category feeds

@@ -4,16 +4,18 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: arabic, aspect ratio, author, category, categories, category, current post, excerpt, extended, featured, featured images, first post image, height, image, images, listed posts, post date, post categories, post category, post title, random, recent posts, sticky, thumb, thumbnail, thumbnails, thumbs, widget, widgets, width, persian, farsi, russian, turkish, japanese
 Requires at least: 2.9
 Requires PHP: 5.2
-Tested up to: 4.9.5
-Stable tag: 6.2
+Tested up to: 4.9.7
+Stable tag: 6.2.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-List of your site&#8217;s most recent posts, with clickable title and thumbnails.
+List the most recent posts with post titles, thumbnails, excerpts, authors, categories, dates and more!
 
 == Description ==
 
-The plugin is available in English, German (Deutsch), Persian (فارسی), Arabic (العربية), Polish (Polski) Russian (русский), Turkish (Türkçe), Japanese (日本語) and Greek (Ελληνικά).
+List the most recent posts with post titles, thumbnails, excerpts, authors, categories, dates and more!
+
+The plugin is available in English, German (Deutsch), Persian (فارسی), Arabic (العربية), Polish (Polski) Russian (русский), Turkish (Türkçe), Japanese (日本語) and Greek (Ελληνικά). It does not collect any personal data, so it is ready for EU General Data Protection Regulation (GDPR) compliance.
 
 = Lightweight, simple and effective =
 
@@ -25,6 +27,7 @@ You can set the width and heigth of the thumbnails in the list. The thumbnails a
 
 = What users said =
 
+* **"BEST of its KIND!!!"** in the [reviews](https://wordpress.org/support/topic/best-of-its-kind-32/) by shirtguy72 on June 3, 2018
 * **"Easier than making an egg, seriously."** in the [reviews](https://wordpress.org/support/topic/easier-than-making-an-egg-seriously/) by djackofall on October 2, 2017
 * **"This plugin is INCREDIBLE"** in the [reviews](https://wordpress.org/support/topic/do-you-also-have-one-for-most-popular-posts/) by lucio7 on August 25, 2017
 * **Number 16** in [20 WordPress Plugins Every Blogger Needs to Increase Engagement](http://nocturnalthrive.com/2017/08/09/20-free-wordpress-plugins-every-blogger-needs/) by Nocturnal Thrive on August 9, 2017
@@ -221,6 +224,10 @@ If you want to contribute a translation of the plugin in your language it would 
 2. The second screenshot shows the widget on the Widget Management Page in the backend.
 
 == Changelog ==
+
+= 6.2.1 =
+* Fixed missing sticky posts in category filtered lists
+* Tested successfully with WordPress 4.9.7
 
 = 6.2 =
 * Added option for category names as links or not
@@ -478,6 +485,9 @@ Successfully tested with WordPress 4.0
 * The plugin was released.
 
 == Upgrade Notice ==
+
+= 6.2.1 =
+Fixed missing sticky posts in category filtered lists, tested with WordPress 4.9.7
 
 = 6.2 =
 Added option for category names as links, added subheadlines in the widget, tested with WordPress 4.9.5

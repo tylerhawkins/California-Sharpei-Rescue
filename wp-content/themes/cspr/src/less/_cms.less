@@ -92,7 +92,7 @@ body.faqs {
 //******************************************************************************
 body.about {
 	.page-title-wrap {
-		background-image: url(../images/about-banner.png);
+		background-image: url(images/about-banner.png);
 	}
 }
 
@@ -101,7 +101,7 @@ body.about {
 //******************************************************************************
 body.contact {
 	.page-title-wrap {
-		background-image: url(../images/contact-banner.png);
+		background-image: url(images/contact-banner.png);
 	}
 
 	.contact-form-container {
@@ -152,7 +152,7 @@ body.contact {
 //******************************************************************************
 body.available-dogs {
 	.page-title-wrap {
-		background-image: url(../images/available-dogs-banner.png);
+		background-image: url(images/available-dogs-banner.png);
 	}
 
 	.available-dogs-container {
@@ -186,6 +186,135 @@ body.available-dogs {
 
 				h5 {
 					margin-bottom: 0;
+				}
+			}
+		}
+	}
+}
+
+//******************************************************************************
+// Adoption Form Page
+//******************************************************************************
+body.adopt {
+	.adoption-form-container {
+		.adoption-page {
+			display: none;
+
+			&.active {
+				display: block;
+			}
+
+			&.intro {
+				.btn-continue {
+					opacity: 0;
+					visibility: hidden;
+					.transition(all 0.3s);
+
+					&.active {
+						opacity: 1;
+						visibility: visible;
+					}
+				}
+			}
+		}
+
+		.important {
+			color: @color-red;
+		}
+
+		ul {
+			list-style: none;
+			padding: 0 40px;
+
+			li {
+				margin-bottom: 10px;
+
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+		}
+
+		.form-field {
+			&.agree {
+				max-width: 600px;
+				margin: 0 auto;
+			}
+		}
+
+		.actions-wrap {
+			margin-bottom: 80px;
+			text-align: center;
+
+			p {
+				font-weight: bold;
+			}
+
+			input[type="submit"] {
+				width: 250px;
+
+				@media only screen and (max-width: @screen-mobile) {
+					width: 100%;
+				}
+			}
+		}
+
+		.section-container {
+			padding-bottom: 40px;
+			margin-bottom: 40px;
+			border-bottom: 1px solid @color-red;
+
+			&.pet-information {
+				padding-bottom: 0;
+				border-bottom: none;
+				margin-bottom: 80px;
+			}
+
+			p {
+				font-weight: bold;
+			}
+
+			.form-col {
+				@media only screen and (min-width: (@screen-tablet + 1)) {
+					width: 46%;
+
+					&.left {
+						float: left;
+					}
+
+					&.right {
+						float: right;
+					}
+				}
+			}
+
+			.col-layout {
+				display: flex;
+
+				.col {
+					margin-right: 15px;
+
+					&:last-of-type {
+						margin-right: 0;
+					}
+				}
+			}
+
+			.wpcf7-list-item {
+				display: inline-block;
+				vertical-align: top;
+				margin-right: 15px;
+
+				input[type="radio"] {
+					display: inline-block;
+					vertical-align: middle;
+					margin-right: 5px;
+				}
+
+				.wpcf7-list-item-label {
+					display: inline-block;
+					vertical-align: middle;
+					padding-top: 3px;
 				}
 			}
 		}

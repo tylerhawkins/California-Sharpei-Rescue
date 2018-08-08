@@ -3,7 +3,7 @@
 Plugin Name: Recent Posts Widget With Thumbnails
 Plugin URI:  http://wordpress.org/plugins/recent-posts-widget-with-thumbnails/
 Description: Small and fast plugin to display in the sidebar a list of linked titles and thumbnails of the most recent postings
-Version:     6.2
+Version:     6.2.1
 Author:      Martin Stehle
 Author URI:  http://stehle-internet.de
 Text Domain: recent-posts-widget-with-thumbnails
@@ -69,7 +69,7 @@ class Recent_Posts_Widget_With_Thumbnails extends WP_Widget {
 		$this->defaults[ 'excerpt_more' ]		= apply_filters( 'rpwwt_excerpt_more', ' ' . '[&hellip;]' ); // set ellipses as default 'more'
 		$this->defaults[ 'number_posts' ]		= 5; // number of posts to show in the widget
 		$this->defaults[ 'plugin_slug' ]		= 'recent-posts-widget-with-thumbnails'; // identifier of this plugin for WP
-		$this->defaults[ 'plugin_version' ]		= '6.2'; // number of current plugin version
+		$this->defaults[ 'plugin_version' ]		= '6.2.1'; // number of current plugin version
 		$this->defaults[ 'post_title_length' ] 	= 1000; // default length: 1000 characters
 		$this->defaults[ 'site_protocol' ]		= ( is_ssl() ) ? 'https' : 'http'; // HTTP type of WP site
 		$this->defaults[ 'site_url' ]			= home_url(); // URL of the current site
@@ -185,9 +185,19 @@ class Recent_Posts_Widget_With_Thumbnails extends WP_Widget {
 			unset( $post_ids );
 		}
 
+		// apply correction function if query includes sticky posts and categories filter
+		if ( isset( $query_args[ 'category__in' ] ) and $bools[ 'keep_sticky' ] ) {
+			add_filter( 'the_posts', array( $this, 'put_sticky_on_top' ) );
+		}
+		
 		// run the query: get the latest posts
 		$r = new WP_Query( apply_filters( 'rpwwt_widget_posts_args', $query_args ) );
 
+		// remove correction function if query includes sticky posts and categories filter
+		if ( isset( $query_args[ 'category__in' ] ) and $bools[ 'keep_sticky' ] ) {
+			remove_filter( 'the_posts', array( $this, 'put_sticky_on_top' ) );
+		}
+		
 		if ( $r->have_posts()) :
 		
 			// take custom size if desired
@@ -951,6 +961,37 @@ class Recent_Posts_Widget_With_Thumbnails extends WP_Widget {
 		
 		// return sizes
 		return array( $width, $height );
+	}
+	
+	/**
+	 * Shows sticky posts on top of categories list
+	 *
+	 * @since 6.2.1
+	 */
+	public function put_sticky_on_top( $posts ) {
+		// get sticky post IDs
+		$sticky_posts = get_option( 'sticky_posts' );
+		// initialize variables for the correct number of posts in the result list
+		$num_posts = count( $posts );
+		$sticky_offset = 0;
+		// loop over posts and relocate stickies to the front
+		for( $i = 0; $i < $num_posts; $i++ ) {
+			// if sticky post
+			if ( in_array( $posts[ $i ]->ID, $sticky_posts ) ) {
+				$sticky_post = $posts[ $i ];
+				// remove sticky post from current position
+				array_splice( $posts, $i, 1 );
+				// move to front, after other stickies
+				array_splice( $posts, $sticky_offset, 0, array( $sticky_post ) );
+				// increment the sticky offset. the next sticky will be placed at this offset.
+				$sticky_offset++;
+				// remove post from sticky posts array
+				//$offset = array_search( $sticky_post->ID, $sticky_posts );
+				//unset( $sticky_posts[ $offset ] );
+			} // if ( in_array( $posts[ $i ]->ID, $sticky_posts ) )
+		} // for()
+		// return new list
+		return $posts;
 	}
 	
 }
