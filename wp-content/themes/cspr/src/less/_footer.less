@@ -1,4 +1,4 @@
-.footer {
+footer.footer {
 	text-align: center;
 
 	a {
@@ -8,9 +8,23 @@
 	.footer-cta-wrap {
 		padding: 30px 50px;
 
+		@media only screen and (max-width: @screen-tablet) {
+			padding: 15px;
+			font: 0/0 a;
+		}
+
 		.footer-cta-col {
 			display: inline-block;
 			vertical-align: middle;
+
+			@media only screen and (max-width: @screen-tablet) {
+				width: 48%;
+			}
+
+			@media only screen and (max-width: @screen-mobile) {
+				display: block;
+				width: 100%;
+			}
 
 			span {
 				display: inline-block;
@@ -40,6 +54,15 @@
 			&.left {
 				margin-right: 20px;
 
+				@media only screen and (max-width: @screen-tablet) {
+					margin-right: 4%;
+				}
+
+				@media only screen and (max-width: @screen-mobile) {
+					margin-right: 0;
+					margin-bottom: 15px;
+				}
+
 				span {
 					background-color: @color-red;
 				}
@@ -47,6 +70,38 @@
 
 			&.right span {
 				background-color: @color-black;
+			}
+
+			@media only screen and (max-width: @screen-tablet) {
+				&.left a {
+					background-color: @color-red;
+				}
+
+				&.right a {
+					background-color: @color-black;
+				}
+
+				a {
+					display: block;
+					padding: 5px 10px;
+					.border-radius(5px);
+				}
+
+				span.img-wrap {
+					padding: 0;
+					margin-right: 10px;
+
+					img {
+						width: 30px;
+					}
+				}
+
+				span.text {
+					padding: 0;
+					margin-left: 0;
+					box-shadow: none;
+					width: auto;
+				}
 			}
 		}
 	}
@@ -57,6 +112,10 @@
 		font-size: 13px;
 		line-height: 16px;
 		padding: 30px 50px;
+
+		@media only screen and (max-width: @screen-tablet) {
+			padding: 30px 15px;
+		}
 
 		.footer-content {
 			border-bottom: 1px solid rgba(224,224,224, 0.4);
@@ -80,6 +139,25 @@
 			font-family: @font-family-roboto-cd;
 			font-weight: bold;
 			text-transform: uppercase;
+
+			@media only screen and (max-width: @screen-tablet) {
+				display: block;
+				margin: 0;
+				font-size: 16px;
+				line-height: 18px;
+				border-bottom: 1px solid rgba(224, 224, 224, 0.4);
+
+				a {
+					display: block;
+					padding: 10px;
+				}
+
+				&:first-child {
+					a {
+						padding-top: 0;
+					}
+				}
+			}
 
 			&:last-child {
 				margin-right: 0;

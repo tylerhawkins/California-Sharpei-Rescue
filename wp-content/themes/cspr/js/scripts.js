@@ -2,6 +2,10 @@
 	$(function () {
 		'use strict';
 
+		$('header.header .mobile-ctl').click(function(e){
+			$(this).parent().parent().toggleClass('active');
+		});
+
 		if( $('.available-dogs').length ) {
 			var matchHeightOptions = {
 					byRow: true,

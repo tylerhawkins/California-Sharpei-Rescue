@@ -1,14 +1,29 @@
-.header {
+header.header {
 	background: @color-white;
 	text-align: right;
 	padding: 10px 0;
 	border-bottom: 1px solid @color-border-light;
+
+	@media only screen and (max-width: @screen-tablet) {
+		text-align: center;
+		padding: 10px 20px;
+		position: relative;
+	}
 
 	.header-inner {
 		position: relative;
 		max-width: 1480px;
 		margin: 0 auto;
 		padding: 46px 20px 46px 172px;
+
+		@media only screen and (min-width: (@screen-tablet + 1)) and (max-width: @screen-tablet-desktop) {
+			padding-top: 25px;
+			padding-bottom: 25px;
+		}
+
+		@media only screen and (max-width: @screen-tablet) {
+			padding: 0;
+		}
 	}
 
 	.logo {
@@ -17,11 +32,32 @@
 		left: 20px;
 		width: 132px;
 		height: auto;
+
+		img {
+			display: block;
+		}
+
+		@media only screen and (max-width: @screen-tablet) {
+			width: 90px;
+			position: relative;
+			top: auto;
+			left: auto;
+			display: inline-block;
+		}
 	}
 
 	.nav {
 		display: inline-block;
 		vertical-align: middle;
+
+		@media only screen and (min-width: (@screen-tablet + 1)) and (max-width: @screen-tablet-desktop) {
+			display: block;
+			margin-bottom: 15px;
+		}
+
+		@media only screen and (max-width: @screen-tablet) {
+			display: none;
+		}
 
 		ul {
 			list-style: none;
@@ -78,6 +114,15 @@
 		padding: 0 0 0 20px;
 		width: 25%;
 
+		@media only screen and (min-width: (@screen-tablet + 1)) and (max-width: @screen-tablet-desktop) {
+			padding: 0;
+			width: 50%;
+		}
+
+		@media only screen and (max-width: @screen-tablet) {
+			display: none;
+		}
+
 		.input-wrap {
 			position: relative;
 
@@ -113,6 +158,82 @@
 					opacity: 0.6;
 				}
 			}
+		}
+	}
+
+	//******************************************************************************
+	// Mobile Menu
+	//******************************************************************************
+	.mobile-ctl {
+		display: none;
+		font-size: 30px;
+		line-height: 30px;
+		position: absolute;
+		top: 50%;
+		left: 0;
+		margin-top: -15px;
+		color: @color-black;
+		cursor: pointer;
+
+		@media only screen and (max-width: @screen-tablet) {
+			display: block;
+		}
+	}
+
+	.mobile-menu {
+		display: none;
+		position: absolute;
+		top: 100%;
+		left: 0;
+		right: 0;
+		width: 100%;
+		background: @color-red;
+		color: @color-white;
+		z-index: 100;
+		text-align: center;
+		.transition(all 0.2s);
+		opacity: 0;
+		visibility: hidden;
+
+		@media only screen and (max-width: @screen-tablet) {
+			display: block;
+		}
+
+		.header-search {
+			display: block;
+			width: 100%;
+			padding: 20px 10px 0;
+
+			input.search-input {
+				border: none;
+			}
+		}
+
+		ul {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+
+			li {
+				border-bottom: 1px solid @color-white;
+
+				a {
+					display: block;
+					color: @color-white;
+					font-size: 14px;
+					line-height: 18px;
+					padding: 20px 10px;
+					font-weight: 600;
+					text-transform: uppercase;
+				}
+			}
+		}
+	}
+
+	&.active {
+		.mobile-menu {
+			opacity: 1;
+			visibility: visible;
 		}
 	}
 }

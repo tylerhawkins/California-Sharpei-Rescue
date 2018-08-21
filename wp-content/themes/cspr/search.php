@@ -1,19 +1,27 @@
 <?php get_header(); ?>
 
-	<main role="main">
-		<!-- section -->
-		<section>
+	<main id="maincontent" class="page-main">
+		<div class="page-title-wrap">
+			<h1 class="page-title">Search Results</h1>
+		</div>
+		<?php if (have_posts()): ?>
+			<div class="page-container clearfix<?php if ( is_dynamic_sidebar( 'cms-sidebar' ) ): ?> has-sidebar<?php endif ?>">
+				<div class="page-content">
+					<h2><?php echo sprintf( __( '%s Search Results for "%s"', 'html5blank' ), $wp_query->found_posts, get_search_query()); ?></h2>
 
-			<h1><?php echo sprintf( __( '%s Search Results for ', 'html5blank' ), $wp_query->found_posts ); echo get_search_query(); ?></h1>
+					<?php get_template_part('loop'); ?>
 
-			<?php get_template_part('loop'); ?>
-
-			<?php get_template_part('pagination'); ?>
-
-		</section>
-		<!-- /section -->
+					<?php get_template_part('pagination'); ?>
+				</div>
+				<?php if ( is_dynamic_sidebar( 'cms-sidebar' ) ): ?>
+					<?php get_sidebar(); ?>
+				<?php endif ?>
+			</div>
+		<?php else: ?>
+			<article>
+				<h2><?php _e( 'Sorry, nothing to display.', 'html5blank' ); ?></h2>
+			</article>
+		<?php endif; ?>
 	</main>
-
-<?php get_sidebar(); ?>
 
 <?php get_footer(); ?>

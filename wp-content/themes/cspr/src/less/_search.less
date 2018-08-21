@@ -1,0 +1,42 @@
+//******************************************************************************
+// Search Results
+//******************************************************************************
+.loop-list {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+
+	li {
+		margin-bottom: 30px;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+		.title {
+			margin-bottom: 5px;
+		}
+
+		.info {
+			margin-bottom: 10px;
+			font: 0/0 a;
+
+			span {
+				display: inline-block;
+				vertical-align: top;
+				font-size: 14px;
+				line-height: 16px;
+				font-family: @font-family-montserrat;
+
+				&:last-of-type {
+					&:before {
+						content: "|";
+						display: inline-block;
+						vertical-align: top;
+						margin: 0 10px;
+					}
+				}
+			}
+		}
+	}
+}

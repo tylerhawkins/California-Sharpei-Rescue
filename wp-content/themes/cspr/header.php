@@ -17,6 +17,8 @@
 		<div class="page-wrapper">
 			<header class="header" role="banner">
 				<div class="header-inner clearfix">
+					<div class="icon-menu mobile-ctl"></div>
+
 					<div class="logo">
 						<a href="<?php echo home_url(); ?>">
 							<img src="<?php echo get_template_directory_uri(); ?>/images/csr_logo.png" alt="California Sharpei Rescue" class="logo-img">
@@ -30,5 +32,10 @@
 					<div class="header-search">
 						<?php get_template_part('searchform'); ?>
 					</div>
+				</div>
+
+				<div class="mobile-menu">
+					<div class="header-search"><?php get_template_part('searchform'); ?></div>
+					<?php getHeaderNav(); ?>
 				</div>
 			</header>

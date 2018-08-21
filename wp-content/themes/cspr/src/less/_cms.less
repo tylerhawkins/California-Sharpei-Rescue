@@ -2,12 +2,20 @@
 // Global
 //******************************************************************************
 .page-title-wrap {
-	.aspect-ratio(1440, 135);
 	background-color: @color-dark-grey;
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: cover;
 	margin-bottom: 80px;
+
+	@media only screen and (min-width: (@screen-tablet + 1)) {
+		.aspect-ratio(1440, 135);
+	}
+
+	@media only screen and (max-width: @screen-tablet) {
+		margin-bottom: 40px;
+		padding: 20px 0;
+	}
 
 	.page-title {
 		font-size: 32px;
@@ -18,7 +26,15 @@
 		letter-spacing: -1px;
 		text-align: center;
 		margin: 0;
-		.absolute-center();
+
+		@media only screen and (min-width: (@screen-tablet + 1)) {
+			.absolute-center();
+		}
+
+		@media only screen and (max-width: @screen-tablet) {
+			font-size: 28px;
+			line-height: 32px;
+		}
 	}
 }
 
@@ -37,11 +53,22 @@
 		.page-content {
 			float: right;
 			width: 65%;
+
+			@media only screen and (max-width: @screen-mobile-tablet) {
+				float: none;
+				width: 100%;
+				margin-bottom: 60px;
+			}
 		}
 
 		.sidebar {
 			float: left;
 			width: 30%;
+
+			@media only screen and (max-width: @screen-mobile-tablet) {
+				float: none;
+				width: 100%;
+			}
 
 			#rpwwt-recent-posts-widget-with-thumbnails-2 {
 				ul li {
