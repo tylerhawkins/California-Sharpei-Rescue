@@ -407,6 +407,7 @@ add_action('widgets_init', 'my_remove_recent_comments_style'); // Remove inline 
 add_action('init', 'html5wp_pagination'); // Add our HTML5 Pagination
 
 add_action('init', 'create_post_type_available_dogs'); // Add Available Dogs post type
+add_action('init', 'create_post_type_happy_ends'); // Add Happy Ends post type
 add_action( 'wpcf7_init', 'custom_add_form_tag_customlist' ); // Add Contact Form 7 Custom Post Type Dropdown
 
 // Remove Actions
@@ -474,6 +475,43 @@ function create_post_type_available_dogs()
             'search_items' => __('Search Available Dog', 'html5blank'),
             'not_found' => __('No Available Dogs found', 'html5blank'),
             'not_found_in_trash' => __('No Available Dogs found in Trash', 'html5blank')
+        ),
+        'public' => true,
+        'hierarchical' => true, // Allows your posts to behave like Hierarchy Pages
+        'has_archive' => true,
+        'supports' => array(
+            'title',
+            'editor',
+            'excerpt',
+            'thumbnail'
+        ), // Go to Dashboard Custom HTML5 Blank post for supports
+        'can_export' => true, // Allows export in Tools > Export
+        'taxonomies' => array(
+            'post_tag',
+            'category'
+        ) // Add Category and Post Tags support
+    ));
+}
+
+function create_post_type_happy_ends()
+{
+    register_taxonomy_for_object_type('category', 'happy-end'); // Register Taxonomies for Category
+    register_taxonomy_for_object_type('post_tag', 'happy-end');
+    register_post_type('happy-end', // Register Custom Post Type
+        array(
+        'labels' => array(
+            'name' => __('Happy Ends', 'html5blank'), // Rename these to suit
+            'singular_name' => __('Happy End', 'html5blank'),
+            'add_new' => __('Add New', 'html5blank'),
+            'add_new_item' => __('Add New Happy End', 'html5blank'),
+            'edit' => __('Edit', 'html5blank'),
+            'edit_item' => __('Edit Happy End', 'html5blank'),
+            'new_item' => __('New Happy End', 'html5blank'),
+            'view' => __('View Happy End', 'html5blank'),
+            'view_item' => __('View Happy End', 'html5blank'),
+            'search_items' => __('Search Happy End', 'html5blank'),
+            'not_found' => __('No Happy Ends found', 'html5blank'),
+            'not_found_in_trash' => __('No Happy Ends found in Trash', 'html5blank')
         ),
         'public' => true,
         'hierarchical' => true, // Allows your posts to behave like Hierarchy Pages
