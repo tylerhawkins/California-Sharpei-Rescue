@@ -1,40 +1,70 @@
 //******************************************************************************
 // Search Results
 //******************************************************************************
+.search-results-container {
+	.page-content .content-title {
+		margin-bottom: 30px;
+	}
+}
+
 .loop-list {
 	list-style: none;
 	padding: 0;
 	margin: 0;
 
 	li {
+		padding-bottom: 30px;
 		margin-bottom: 30px;
+		border-bottom: 1px solid @color-border-light;
 
 		&:last-child {
-			margin-bottom: 0;
+			padding-bottom: 0;
+			border-bottom: none;
 		}
 
-		.title {
-			margin-bottom: 5px;
+		&:after {
+			content: "";
+			clear: both;
+			display: table;
 		}
 
-		.info {
-			margin-bottom: 10px;
-			font: 0/0 a;
+		.post-img {
+			float: left;
+			margin-right: 15px;
+			display: inline-block;
+			vertical-align: top;
 
-			span {
-				display: inline-block;
-				vertical-align: top;
+			@media only screen and (max-width: @screen-tablet) {
+				float: none;
+				margin-right: 0;
+				margin-bottom: 15px;
+			}
+
+			img {
+				display: block;
+			}
+		}
+
+		.post-content {
+			.title {
+				margin-bottom: 5px;
+
+				a {
+					display: inline-block;
+					vertical-align: top;
+					color: @color-black;
+				}
+			}
+
+			.date {
 				font-size: 14px;
 				line-height: 16px;
-				font-family: @font-family-montserrat;
+				margin-bottom: 10px;
+			}
 
-				&:last-of-type {
-					&:before {
-						content: "|";
-						display: inline-block;
-						vertical-align: top;
-						margin: 0 10px;
-					}
+			.excerpt {
+				.view-article {
+					text-decoration: underline;
 				}
 			}
 		}

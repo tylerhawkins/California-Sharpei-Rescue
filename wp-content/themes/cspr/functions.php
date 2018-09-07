@@ -158,9 +158,9 @@ function register_html5_menu()
     ));
 }
 
-// Modify core Recent Posts Widget to include Available Dogs custom post type
+// Modify core Recent Posts Widget to include *only* Available Dogs custom post type
 function widget_posts_args_add_custom_type($params) {
-   $params['post_type'] = array('post','available-dog');
+   $params['post_type'] = array('available-dog');
    return $params;
 }
 

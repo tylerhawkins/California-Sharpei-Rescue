@@ -93,13 +93,31 @@
 
 			li {
 				float: left;
-				width: 32%;
 				text-align: center;
-				margin-right: 2%;
-				margin-bottom: 2%;
 
-				&:nth-child(3n) {
-					margin-right: 0;
+				@media only screen and (min-width: (@screen-tablet + 1)) {
+					width: 32%;
+					margin-right: 2%;
+					margin-bottom: 2%;
+
+					&:nth-child(3n) {
+						margin-right: 0;
+					}
+				}
+
+				@media only screen and (min-width: (@screen-mobile + 1)) and (max-width: @screen-tablet) {
+					width: 48%;
+					margin-right: 4%;
+					margin-bottom: 4%;
+
+					&:nth-child(2n) {
+						margin-right: 0;
+					}
+				}
+
+				@media only screen and (max-width: @screen-mobile) {
+					float: none;
+					margin-bottom: 30px;
 				}
 
 				.img-wrap {

@@ -25,3 +25,4 @@ wp-content/plugins/hello.php
 # Custom ignores
 .DS_Store
 gulp/node_modules/
+gulp/package-lock.json

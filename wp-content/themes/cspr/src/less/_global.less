@@ -25,27 +25,52 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
 	font-size: 54px;
-	line-height: 58px;
+	line-height: 56px;
+
+	@media only screen and (max-width: @screen-mobile) {
+		font-size: 40px;
+		line-height: 40px;
+	}
 }
 
 h2 {
 	font-size: 50px;
-	line-height: 54px;
+	line-height: 52px;
+
+	@media only screen and (max-width: @screen-mobile) {
+		font-size: 36px;
+		line-height: 36px;
+	}
 }
 
 h3 {
 	font-size: 44px;
-	line-height: 48px;
+	line-height: 46px;
+
+	@media only screen and (max-width: @screen-mobile) {
+		font-size: 26px;
+		line-height: 26px;
+	}
 }
 
 h4 {
 	font-size: 30px;
-	line-height: 34px;
+	line-height: 32px;
+
+	@media only screen and (max-width: @screen-mobile) {
+		font-size: 22px;
+		line-height: 22px;
+	}
 }
 
 h5 {
 	font-size: 28px;
-	line-height: 32px;
+	line-height: 30px;
+
+	@media only screen and (max-width: @screen-mobile) {
+		font-size: 20px;
+		line-height: 20px;
+	}
 }
 
 p {
@@ -206,6 +231,12 @@ input[type="submit"] {
 				}
 			}
 		}
+
+		.wpcf7-submit {
+			@media only screen and (max-width: @screen-mobile) {
+				width: 100%;
+			}
+		}
 	}
 }
 
@@ -219,22 +250,117 @@ input[type="submit"] {
 	}
 }
 
+// Give Form Styling
+.give-form-wrap {
+	margin-bottom: 40px;
+}
+
+form[id*=give-form] {
+	#give-donation-level-button-wrap, #give-payment-mode-select {
+		margin-bottom: 40px;
+	}
+
+	button.give-donation-level-btn {
+		background: @color-dark-grey-2;
+		border-color: @color-dark-grey-2;
+		color: @color-white;
+		.transition(all 0.3s);
+
+		&:hover {
+			background: @color-light-grey;
+			color: @color-black;
+		}
+	}
+
+	label.give-label {
+		font-size: 16px;
+		line-height: 20px !important;
+		font-weight: bold;
+		color: @color-text;
+	}
+
+	input.give-input {
+		font-size: 14px;
+		line-height: 38px;
+		height: 40px;
+		padding: 0 10px !important;
+		border: 1px solid @color-border-light !important;
+		border-radius: 5px !important;
+		background-color: @color-light-grey !important;
+	}
+
+	button.give-btn {
+		border-radius: 5px;
+	}
+
+	.give-donation-amount {
+		span.give-currency-symbol {
+			border-top-left-radius: 5px;
+			border-bottom-left-radius: 5px;
+		}
+
+		input#give-amount {
+			border-top-right-radius: 5px;
+			border-bottom-right-radius: 5px;
+		}
+	}
+
+	#give-final-total-wrap {
+		span.give-donation-total-label {
+			font-size: 16px;
+
+			@media only screen and (min-width: (@screen-mobile + 1)) {
+				border-top-left-radius: 5px;
+				border-bottom-left-radius: 5px;
+			}
+
+			@media only screen and (max-width: @screen-mobile) {
+				border-top-left-radius: 5px;
+				border-top-right-radius: 5px;
+			}
+		}
+
+		span.give-final-total-amount {
+			font-size: 16px;
+
+			@media only screen and (min-width: (@screen-mobile + 1)) {
+				border-top-right-radius: 5px;
+				border-bottom-right-radius: 5px;
+			}
+
+			@media only screen and (max-width: @screen-mobile) {
+				border-bottom-left-radius: 5px;
+				border-bottom-right-radius: 5px;
+			}
+		}
+	}
+
+	input.give-submit {
+		padding-left: 40px;
+		padding-right: 40px;
+
+		@media only screen and (max-width: @screen-mobile) {
+			width: 100%;
+		}
+	}
+}
+
 /*------------------------------------*\
     MISC
 \*------------------------------------*/
 
 ::selection {
-	background: @color-light-grey;
+	background: @color-red;
 	color: @color-white;
 	text-shadow:none;
 }
 ::-webkit-selection {
-	background: @color-light-grey;
+	background: @color-red;
 	color: @color-white;
 	text-shadow:none;
 }
 ::-moz-selection {
-	background: @color-light-grey;
+	background: @color-red;
 	color: @color-white;
 	text-shadow:none;
 }
