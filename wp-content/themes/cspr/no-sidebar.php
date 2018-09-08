@@ -1,4 +1,7 @@
-<?php get_header(); ?>
+<?php
+	/* Template Name: No Sidebar Template */
+	get_header();
+?>
 
 	<main id="maincontent" class="page-main">
 		<div class="page-title-wrap">

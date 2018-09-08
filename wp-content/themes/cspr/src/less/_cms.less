@@ -52,7 +52,11 @@
 	&.has-sidebar {
 		.page-content {
 			float: right;
-			width: 65%;
+			width: 75%;
+
+			@media only screen and (min-width: (@screen-mobile-tablet + 1)) and (max-width: @screen-tablet-desktop) {
+				width: 65%;
+			}
 
 			@media only screen and (max-width: @screen-mobile-tablet) {
 				float: none;
@@ -63,7 +67,11 @@
 
 		.sidebar {
 			float: left;
-			width: 30%;
+			width: 20%;
+
+			@media only screen and (min-width: (@screen-mobile-tablet + 1)) and (max-width: @screen-tablet-desktop) {
+				width: 30%;
+			}
 
 			@media only screen and (max-width: @screen-mobile-tablet) {
 				float: none;
@@ -91,10 +99,15 @@
 					display: block;
 					text-align: center;
 					font-size: 28px;
-					line-height: 32px;
+					line-height: 30px;
 					font-family: @font-family-montserrat;
 					font-weight: bold;
 					color: @color-black;
+
+					@media only screen and (max-width: @screen-mobile) {
+						font-size: 20px;
+						line-height: 20px;
+					}
 				}
 			}
 		}
@@ -379,4 +392,50 @@ body.adopt {
 			}
 		}
 	}
+}
+
+//******************************************************************************
+// Happy Ends Page
+//******************************************************************************
+.happy-ends-container {
+	.happy-ends {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+
+		.happy-end {
+			padding-bottom: 30px;
+			margin-bottom: 30px;
+			border-bottom: 1px solid @color-border-light;
+
+			&:last-child {
+				padding-bottom: 0;
+				border-bottom: none;
+			}
+
+			.img-wrap {
+				margin-bottom: 15px;
+
+				img {
+					display: block;
+				}
+			}
+
+			h5 {
+				margin-bottom: 5px;
+			}
+
+			.date {
+				font-size: 14px;
+				line-height: 16px;
+				margin-bottom: 10px;
+			}
+
+			.content {
+				p:last-of-type {
+					margin-bottom: 0;
+				}
+			}
+		}
+	}	
 }

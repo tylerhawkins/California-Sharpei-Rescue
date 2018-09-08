@@ -5,21 +5,34 @@
 
 				<!-- post thumbnail -->
 				<?php if ( has_post_thumbnail()) : // Check if thumbnail exists ?>
-					<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" class="post-img">
-						<?php the_post_thumbnail('medium'); ?>
-					</a>
+					<?php if ( 'happy-end' == get_post_type() ): ?>
+						<div class="post-img">
+							<?php the_post_thumbnail('medium'); ?>
+						</div>
+					<?php else: ?>
+						<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" class="post-img">
+							<?php the_post_thumbnail('medium'); ?>
+						</a>
+					<?php endif ?>
 				<?php endif; ?>
 				<!-- /post thumbnail -->
 
 				<div class="post-content">
-					<h4 class="title">
-						<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
-					</h4>
+					<?php if ( 'happy-end' == get_post_type() ): ?>
+						<h5 class="title"><?php the_title(); ?></h5>
+					<?php else: ?>
+						<h5 class="title">
+							<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
+						</h5>
+					<?php endif ?>
 
 					<p class="date"><?php the_time('F j, Y'); ?> <?php the_time('g:i a'); ?></p>
 
-					<div class="excerpt"><?php html5wp_excerpt('html5wp_index'); // Build your custom callback length in functions.php ?></div>
-
+					<?php if ( 'happy-end' == get_post_type() ): ?>
+						<div class="excerpt"><?php the_content() ?></div>
+					<?php else: ?>
+						<div class="excerpt"><?php html5wp_excerpt('html5wp_index'); // Build your custom callback length in functions.php ?></div>
+					<?php endif ?>
 				</div>
 			</li>
 		<?php endwhile; ?>

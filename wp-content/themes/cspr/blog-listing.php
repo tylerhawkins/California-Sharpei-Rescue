@@ -30,9 +30,9 @@
 									<?php endif; ?>
 
 									<div class="post-content">
-										<h4 class="title">
+										<h5 class="title">
 											<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
-										</h4>
+										</h5>
 										<p class="date"><?php the_time('F j, Y'); ?> <?php the_time('g:i a'); ?></p>
 										<div class="excerpt"><?php the_excerpt() ?></div>
 									</div>
