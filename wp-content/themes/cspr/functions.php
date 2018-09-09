@@ -382,9 +382,9 @@ function custom_customlist_form_tag_handler( $tag ) {
 
     while ($query->have_posts()) {
         $query->the_post();
-        $post_title = urlencode( get_the_title() );
+        $post_title = get_the_title();
         $post_id = get_the_ID();
-        $customlist .= sprintf( '<option value="%1$s">%2$s</option>', esc_html( $post_title ), esc_html( $post_title ) );
+        $customlist .= sprintf( '<option value="%1$s">%2$s</option>', esc_html( urlencode( $post_title ) ), esc_html( $post_title ) );
     }
 
     wp_reset_query();
