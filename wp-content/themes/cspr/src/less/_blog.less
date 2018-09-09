@@ -1,3 +1,6 @@
+//******************************************************************************
+// Blog Listing Page
+//******************************************************************************
 .blog-posts-container {
 	.blog-posts {
 		list-style: none;
@@ -25,11 +28,13 @@
 				margin-right: 15px;
 				display: inline-block;
 				vertical-align: top;
+				max-width: 400px;
 
-				@media only screen and (max-width: @screen-tablet) {
+				@media only screen and (max-width: @screen-tablet-desktop) {
 					float: none;
 					margin-right: 0;
 					margin-bottom: 15px;
+					max-width: 100%;
 				}
 
 				img {
@@ -59,6 +64,46 @@
 						text-decoration: underline;
 					}
 				}
+			}
+		}
+	}
+}
+
+//******************************************************************************
+// Blog Single Page
+//******************************************************************************
+.single-post {
+	.page-container {
+		padding-top: 40px;
+		padding-bottom: 40px;
+	}
+}
+
+.page-container {
+	.page-content {
+		.blog-title {
+			margin-bottom: 5px;
+		}
+
+		.date {
+			font-size: 14px;
+			line-height: 16px;
+			margin-bottom: 15px;
+		}
+
+		.blog-img {
+			margin-bottom: 15px;
+		}
+	}
+
+	.comments  {
+		.comment-reply-title {
+			margin-bottom: 0;
+		}
+
+		.comment-form-comment {
+			label {
+				display: none;
 			}
 		}
 	}

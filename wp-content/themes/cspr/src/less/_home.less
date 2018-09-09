@@ -4,11 +4,18 @@
 		background: url(images/home-banner-lucy.jpg) center center no-repeat;
 		background-size: cover;
 
-		&:before {
-			display: block;
-			content: "";
-			width: 100%;
-			padding-top: (600 / 1400) * 100%;
+		@media only screen and (min-width: (@screen-tablet + 1)) {
+			&:before {
+				display: block;
+				content: "";
+				width: 100%;
+				padding-top: (600 / 1400) * 100%;
+			}
+		}
+
+		@media only screen and (max-width: @screen-tablet) {
+			padding: 150px 40px 50px;
+			background-image: url();
 		}
 
 		.text-box {
@@ -17,12 +24,34 @@
 			right: 10%;
 			max-width: 500px;
 
+			@media only screen and (min-width: (@screen-tablet + 1)) and (max-width: @screen-tablet-desktop) {
+				max-width: 400px;
+			}
+
+			@media only screen and (max-width: @screen-tablet) {
+				position: relative;
+				top: auto;
+				right: auto;
+				max-width: 100%;
+				text-align: center;
+			}
+
 			h2 {
 				font-size: 50px;
 				line-height: 58px;
 				color: @color-white;
 				margin: 0 0 10px;
 				text-transform: none;
+
+				@media only screen and (min-width: (@screen-tablet + 1)) and (max-width: @screen-tablet-desktop) {
+					font-size: 38px;
+					line-height: 38px;
+				}
+
+				@media only screen and (max-width: @screen-tablet) {
+					font-size: 34px;
+					line-height: 38px;
+				}
 			}
 
 			p {
@@ -32,6 +61,11 @@
 				line-height: 33px;
 				font-weight: bold;
 				color: @color-dark-grey-2;
+
+				@media only screen and (max-width: @screen-tablet-desktop) {
+					font-size: 22px;
+					line-height: 24px;
+				}
 			}
 
 			.btn {
@@ -47,6 +81,10 @@
 		background-color: @color-dark-grey;
 		padding: 60px 20px;
 
+		@media only screen and (max-width: @screen-mobile-tablet) {
+			padding: 30px 15px;
+		}
+
 		.welcome-text-inner {
 			max-width: 880px;
 			margin: 0 auto;
@@ -54,6 +92,11 @@
 
 		h2 {
 			color: @color-white;
+
+			@media only screen and (min-width: (@screen-tablet + 1)) and (max-width: @screen-tablet-desktop) {
+				font-size: 40px;
+				line-height: 40px;
+			}
 		}
 
 		p {
@@ -62,6 +105,11 @@
 
 			&:first-of-type {
 				margin-bottom: 20px;
+			}
+
+			@media only screen and (max-width: @screen-mobile-tablet) {
+				font-size: 16px;
+				line-height: 20px;
 			}
 		}
 	}

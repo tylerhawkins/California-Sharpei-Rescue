@@ -30,6 +30,7 @@ if (function_exists('add_theme_support'))
     add_image_size('large', 700, '', true); // Large Thumbnail
     add_image_size('medium', 250, '', true); // Medium Thumbnail
     add_image_size('small', 120, '', true); // Small Thumbnail
+    add_image_size('custom-blog', 640, '', true); // Custom Blog Thumbnail Size call using the_post_thumbnail('custom-blog');
     add_image_size('custom-size', 720, 540, true); // Custom Thumbnail Size call using the_post_thumbnail('custom-size');
     add_image_size('custom-sidebar', 360, 270, true); // Custom Sidebar Thumbnail Size call using the_post_thumbnail('custom-sidebar');
 
@@ -381,7 +382,8 @@ function custom_customlist_form_tag_handler( $tag ) {
 
     while ($query->have_posts()) {
         $query->the_post();
-        $post_title = get_the_title();
+        $post_title = urlencode( get_the_title() );
+        $post_id = get_the_ID();
         $customlist .= sprintf( '<option value="%1$s">%2$s</option>', esc_html( $post_title ), esc_html( $post_title ) );
     }
 

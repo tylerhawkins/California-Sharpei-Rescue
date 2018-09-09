@@ -7,11 +7,11 @@
 				<?php if ( has_post_thumbnail()) : // Check if thumbnail exists ?>
 					<?php if ( 'happy-end' == get_post_type() ): ?>
 						<div class="post-img">
-							<?php the_post_thumbnail('medium'); ?>
+							<?php the_post_thumbnail('custom-blog'); ?>
 						</div>
 					<?php else: ?>
 						<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" class="post-img">
-							<?php the_post_thumbnail('medium'); ?>
+							<?php the_post_thumbnail('custom-blog'); ?>
 						</a>
 					<?php endif ?>
 				<?php endif; ?>

@@ -15,7 +15,7 @@
 					<div class="available-dog-col right">
 						<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 							<div class="actions-toolbar">
-								<a href="<?php echo get_permalink( get_page_by_path( 'adopt' ) ) ?>" class="btn">Adopt</a>
+								<a href="<?php echo esc_url( add_query_arg( 'dog', urlencode( get_the_title() ), untrailingslashit( get_permalink( get_page_by_path( 'adopt' ) ) ) ) ); ?>" class="btn">Adopt</a>
 								<a href="<?php echo get_permalink( get_page_by_path( 'donate' ) ) ?>" class="btn secondary">Donate</a>
 							</div>
 
@@ -24,7 +24,7 @@
 							</div>
 
 							<div class="actions-toolbar">
-								<a href="<?php echo get_permalink( get_page_by_path( 'adopt' ) ) ?>" class="btn">Adopt</a>
+								<a href="<?php echo esc_url( add_query_arg( 'dog', urlencode( get_the_title() ), untrailingslashit( get_permalink( get_page_by_path( 'adopt' ) ) ) ) ); ?>" class="btn">Adopt</a>
 								<a href="<?php echo get_permalink( get_page_by_path( 'donate' ) ) ?>" class="btn secondary">Donate</a>
 							</div>
 						</article>

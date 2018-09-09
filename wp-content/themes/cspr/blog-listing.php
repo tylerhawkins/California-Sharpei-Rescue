@@ -25,7 +25,7 @@
 								<li class="blog-post">
 									<?php if ( has_post_thumbnail()) : // Check if thumbnail exists ?>
 										<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" class="post-img">
-											<?php the_post_thumbnail('medium'); ?>
+											<?php the_post_thumbnail('custom-blog'); ?>
 										</a>
 									<?php endif; ?>
 
