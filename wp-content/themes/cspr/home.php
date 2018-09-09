@@ -9,7 +9,7 @@
 			<div class="text-box">
 				<h2>Our mission is to rescue Shar-Pei from high-kill shelters</h2>
 				<p>and give them the time and care they need to find a forever home.</p>
-				<a href="<?php echo get_permalink( get_page_by_path( 'about' ) ) ?>" class="btn">Adopt Today!</a>
+				<a href="<?php echo get_permalink( get_page_by_path( 'available-dogs' ) ) ?>" class="btn">Adopt Today!</a>
 			</div>
 		</div>
 	</div>
