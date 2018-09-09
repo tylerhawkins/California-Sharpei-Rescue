@@ -14,7 +14,7 @@
 					remove: false
 				};
 
-			$('.available-dogs > li .img-wrap').matchHeight(matchHeightOptions);
+			$('.available-dogs > li').matchHeight(matchHeightOptions);
 		}
 
 		if( $('.adoption-form-container').length ) {
