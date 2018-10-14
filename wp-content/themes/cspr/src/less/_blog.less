@@ -25,10 +25,10 @@
 
 			.post-img {
 				float: left;
-				margin-right: 15px;
 				display: inline-block;
 				vertical-align: top;
-				max-width: 400px;
+				max-width: 35%;
+				margin-right: 5%;
 
 				@media only screen and (max-width: @screen-tablet-desktop) {
 					float: none;
@@ -43,6 +43,14 @@
 			}
 
 			.post-content {
+				float: left;
+				width: 60%;
+
+				@media only screen and (max-width: @screen-tablet-desktop) {
+					float: none;
+					width: 100%;
+				}
+
 				.title {
 					margin-bottom: 5px;
 

@@ -14,8 +14,24 @@
 		}
 
 		@media only screen and (max-width: @screen-tablet) {
-			padding: 150px 40px 50px;
-			background-image: url();
+			padding: 200px 40px 50px;
+			background: url(images/home-banner-tablet.jpg) center bottom no-repeat;
+			position: relative;
+
+			&:after {
+				content: '';
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				background-color: rgba(0,0,0,0.2);
+			}
+		}
+
+		@media only screen and (max-width: @screen-mobile) {
+			padding: 140px 20px 40px;
+			background: url(images/home-banner-mobile.jpg) center bottom no-repeat;
 		}
 
 		.text-box {
@@ -23,6 +39,7 @@
 			top: 10%;
 			right: 10%;
 			max-width: 500px;
+			z-index: 10;
 
 			@media only screen and (min-width: (@screen-tablet + 1)) and (max-width: @screen-tablet-desktop) {
 				max-width: 400px;
@@ -65,6 +82,10 @@
 				@media only screen and (max-width: @screen-tablet-desktop) {
 					font-size: 22px;
 					line-height: 24px;
+				}
+
+				@media only screen and (max-width: @screen-mobile) {
+					color: @color-white;
 				}
 			}
 
